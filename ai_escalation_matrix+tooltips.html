@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dual Role of AI in Crisis Escalation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#111827',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        /* Custom Tooltip Animation & Visibility Overrides */
+        .group:hover .tooltip-box,
+        .group:focus-within .tooltip-box {
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-6 px-3 sm:px-6 overflow-x-hidden">
+
+    <div class="max-w-[1600px] mx-auto space-y-4 pt-10">
+        
+        <!-- Header -->
+        <header class="border-b border-slate-800 pb-3">
+            <div class="flex items-center justify-between gap-2 mb-1">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-400 text-[10px] font-semibold tracking-wide uppercase">
+                    <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    Strategic Assessment Matrix
+                </div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Interactive Executive Report</span>
+            </div>
+            <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">
+                The Dual Role of AI in Crisis Escalation
+            </h1>
+            <p class="text-slate-400 text-xs sm:text-sm max-w-4xl mt-0.5">
+                Hover over the <span class="text-emerald-400 font-medium">Detailed Analysis</span> buttons in the right column to inspect the operational mechanics of AI as an escalation circuit breaker.
+            </p>
+        </header>
+
+        <!-- Main Summary Matrix Container with Unrestricted Overflow -->
+        <main class="glass-card rounded-xl border border-slate-800 shadow-2xl !overflow-visible relative z-10">
+            <div class="!overflow-visible">
+                <table class="w-full text-left border-collapse !overflow-visible">
+                    <thead>
+                        <tr class="bg-slate-900 border-b border-slate-800 text-[11px] font-bold uppercase tracking-wider relative z-0">
+                            <th scope="col" class="py-3 px-4 text-blue-400 w-2/12 min-w-[160px]">Escalator</th>
+                            <th scope="col" class="py-3 px-4 text-red-400 w-5/12 min-w-[320px]">Role of AI as an Escalator</th>
+                            <th scope="col" class="py-3 px-4 text-emerald-400 w-5/12 min-w-[320px]">Role of AI in Thwarting Escalation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80 text-xs leading-relaxed">
+                        
+                        <!-- Row 1: Decision Speed (EXTRA WIDE 700px TOOLTIP) -->
+                        <tr class="hover:bg-slate-900/50 transition-colors relative">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    Decision Speed
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Forces microsecond pre-emptive strikes by compressing decision windows beyond human cognitive processing capacity, creating a 'use-it-or-lose-it' trap.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <!-- Double-Width Interactive Tooltip Container -->
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <!-- Expanded 700px Double-Wide Tooltip Box -->
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-3 w-[700px] max-w-[92vw] p-4 bg-slate-900 border-2 border-emerald-500/60 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-2 flex items-center justify-between border-b border-slate-800 pb-2">
+                                                <span class="flex items-center gap-2 text-sm">
+                                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                                    AI as the Thwarting Agent: Decision Speed & Temporal Controls
+                                                </span>
+                                                <span class="text-[10px] text-emerald-400 font-mono uppercase bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">Circuit Breaker Mechanism</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200 text-xs sm:text-sm">
+                                                AI algorithms can be programmed as <strong>hard-coded temporal circuit breakers</strong>. When an AI battle-management network detects an anomalous operational spike, it can automatically enforce a mandatory "cooling-off" pause for human authorization, preventing purely automated retaliatory strikes.
+                                            </p>
+                                            <!-- Pointer arrow pointing down -->
+                                            <div class="absolute right-6 -bottom-2 w-3.5 h-3.5 bg-slate-900 border-r-2 border-b-2 border-emerald-500/60 transform rotate-45"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                Enforces hard-coded temporal circuit breakers and automated cooling-off pauses when operational anomalies are detected.
+                            </td>
+                        </tr>
+
+                        <!-- Row 2: Frictionless Striking -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    Frictionless Striking
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Lowers political and domestic barriers to launching kinetic attacks by eliminating human casualty risks through uncrewed autonomous systems.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[480px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/40 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>AI as the Thwarting Agent (Frictionless Striking)</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                AI vision systems and sensor networks enhance <strong>unambiguous target verification</strong>. Instead of striking blindly based on radio signals or low-resolution radar, edge AI confirms target profiles on-board, preventing accidental strikes on civil infrastructure or neutral assets that would otherwise provoke retaliatory escalation.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Ensures high-confidence, multi-spectral onboard target identification, preventing accidental strikes on civil or neutral infrastructure.
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: Targeting Bias -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    Targeting Bias
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Causes commanders to execute pre-emptive strikes based on hallucinated threats or unverified data due to systemic automation bias.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[480px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/40 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>AI as the Thwarting Agent (Targeting Bias)</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Secondary <strong>adversarial audit AI models</strong> can act as red-team filters. Before a strike package is presented to command, a separate, independently trained model checks the confidence score, identifies potential data biases, and flags low-certainty targets, preventing pre-emptive strikes based on flawed intelligence.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Audits intelligence outputs using independent, secondary red-team AI models to verify target confidence scores before strike authorization.
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: C3 Entanglement -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    C3 Entanglement
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Misinterprets tactical or cyber strikes on dual-capable networks as strategic first strikes, risking accidental nuclear escalation.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[480px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/40 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>AI as the Thwarting Agent (C3 Entanglement)</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                AI can establish <strong>firewalled network segmentation</strong>. Machine-learning systems dedicated to conventional tactical operations can be structurally separated from strategic early-warning networks, ensuring that tactical battlefield alerts cannot automatically trigger strategic or nuclear escalation procedures.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Firewalls tactical conventional battle-management networks from strategic early-warning and nuclear command infrastructure.
+                            </td>
+                        </tr>
+
+                        <!-- Row 5: Adversarial Spoofing -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    Adversarial Spoofing
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Triggers automated defensive counter-strikes against false target profiles created by adversarial data poisoning or sensor perturbations.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[480px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/40 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>AI as the Thwarting Agent (Adversarial Spoofing)</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Advanced <strong>robustness-verification algorithms</strong> and multi-modal AI validation cross-check optical, thermal, acoustic, and radar telemetry simultaneously. If radar data appears spoofed, the AI rejects single-source inputs, neutralizing data-poisoning attempts before they trigger erroneous counter-strikes.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Cross-validates multi-modal sensor inputs (optical, acoustic, radar, thermal) simultaneously to reject spoofed single-source data streams.
+                            </td>
+                        </tr>
+
+                        <!-- Row 6: Swarm Loops -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    Swarm Loops
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Sparks automated 'flash wars' when opposing autonomous swarms interact in contested zones and trigger unpredictable reinforcement-learning feedback loops.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[480px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/40 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>AI as the Thwarting Agent (Swarm Loops)</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Militaries can program <strong>de-confliction and geo-fencing protocols</strong> directly into swarm software. AI models can be instructed to default to automated standoff maneuvers, defensive dispersal, or non-lethal electronic posture whenever an unidentified autonomous platform approaches within a designated buffer zone.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Enforces automated de-confliction protocols, geo-fencing, and default standoff dispersal maneuvers when encountering unidentified autonomous platforms.
+                            </td>
+                        </tr>
+
+                        <!-- Row 7: Attribution Loss -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    Attribution Loss
+                                </div>
+                            </td>
+                            <td class="py-2.5 px-4 text-red-200/90 bg-red-950/10">
+                                <div class="mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-red-900/40 text-red-300 border border-red-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-red-400"></span> Accelerator
+                                    </span>
+                                </div>
+                                Enables deniable proxy decapitation strikes via low-cost open-source autonomous weapons, driving regional intelligence paranoia.
+                            </td>
+                            <td class="py-2.5 px-4 text-emerald-200/90 bg-emerald-950/10">
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-900/40 text-emerald-300 border border-emerald-700/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Circuit Breaker
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/40 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Analysis</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[480px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/40 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>AI as the Thwarting Agent (Attribution Loss)</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                AI-driven <strong>forensic attribution systems</strong> analyze flight trajectories, component telemetry, RF spectrum signatures, and micro-payload debris to rapidly trace the origin and launch point of uncrewed systems. Restoring immediate attribution eliminates the cloak of covert proxy attacks, deterring actors from using uncrewed platforms for deniable aggression.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Performs automated forensic telemetry, component analysis, and flight-path trajectory tracing to restore immediate launch-point attribution.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center sm:text-left text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2 px-1 pt-2">
+            <span>Executive Assessment Matrix &bull; AI Crisis Dynamics</span>
+            <span>Hover over "Detailed Analysis" buttons to view operational thwarting mechanisms</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>

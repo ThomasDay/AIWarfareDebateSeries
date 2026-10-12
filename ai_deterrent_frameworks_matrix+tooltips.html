@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Deterrent Frameworks Matrix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#111827',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        /* Hover tooltip visibility transitions */
+        .group:hover .tooltip-box,
+        .group:focus-within .tooltip-box {
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-6 px-3 sm:px-6 overflow-x-hidden">
+
+    <div class="max-w-[1600px] mx-auto space-y-4 pt-16">
+        
+        <!-- Header -->
+        <header class="border-b border-slate-800 pb-3">
+            <div class="flex items-center justify-between gap-2 mb-1">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-[10px] font-semibold tracking-wide uppercase">
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    Strategic Defense Matrix
+                </div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Interactive Deterrence Report</span>
+            </div>
+            <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">
+                AI Frameworks in Modern War Deterrence
+            </h1>
+            <p class="text-slate-400 text-xs sm:text-sm max-w-4xl mt-0.5">
+                Hover over the <span class="text-emerald-400 font-medium">Detailed Mechanism</span> buttons in Column 3 to inspect the specific AI technical capabilities enabling each deterrence framework.
+            </p>
+        </header>
+
+        <!-- Main Deterrence Table Container -->
+        <main class="glass-card rounded-xl border border-slate-800 shadow-2xl !overflow-visible relative z-10">
+            <div class="!overflow-visible">
+                <table class="w-full text-left border-collapse !overflow-visible">
+                    <thead>
+                        <tr class="bg-slate-900 border-b border-slate-800 text-[11px] font-bold uppercase tracking-wider relative z-0">
+                            <th scope="col" class="py-3 px-4 text-emerald-400 w-3/12 min-w-[220px]">Deterrent Framework</th>
+                            <th scope="col" class="py-3 px-4 text-blue-400 w-3/12 min-w-[240px]">Framework Role</th>
+                            <th scope="col" class="py-3 px-4 text-slate-200 w-6/12 min-w-[380px]">How AI Enables Deterrence</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80 text-xs leading-relaxed">
+                        
+                        <!-- Row 1: Low-Cost Attritable Defensive Mass (EXTRA WIDE 700px TOOLTIP ABOVE HEADER) -->
+                        <tr class="hover:bg-slate-900/50 transition-colors relative">
+                            <td class="py-3 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                    Low-Cost Attritable Defensive Mass
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 text-blue-300 font-medium bg-blue-950/10">
+                                Autonomous Swarm Intelligence & Mesh Networking
+                            </td>
+                            <td class="py-3 px-4 text-slate-200 bg-slate-900/20">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Swarm Enabler
+                                    </span>
+
+                                    <!-- Double-Width Interactive Tooltip Container -->
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/50 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Mechanism</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <!-- Expanded 700px Double-Wide Tooltip Box -->
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-3 w-[700px] max-w-[92vw] p-4 bg-slate-900 border-2 border-emerald-500/70 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-2 flex items-center justify-between border-b border-slate-800 pb-2">
+                                                <span class="flex items-center gap-2 text-sm">
+                                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                                    Operational Mechanism: Edge Mesh & Swarming Algorithms
+                                                </span>
+                                                <span class="text-[10px] text-emerald-400 font-mono uppercase bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/40">Deterrence Mechanism</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200 text-xs sm:text-sm">
+                                                Utilizing edge computing and "boids" swarming algorithms, AI allows hundreds of low-cost platforms to communicate via self-healing Mobile Ad-hoc Networks (MANET). If jamming cuts off satellite links or destroys the lead drone, the AI mesh instantly reassigns targeting tasks across the remaining swarm without human intervention. This guarantees that a defensive perimeter remains active, destroying the aggressor's expected cost-to-benefit ratio.
+                                            </p>
+                                            <div class="absolute right-6 -bottom-2 w-3.5 h-3.5 bg-slate-900 border-r-2 border-b-2 border-emerald-500/70 transform rotate-45"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                Cheap physical hardware (drones, loitering munitions, unmanned surface vessels) cannot deter an adversary on its own if each platform requires a human operator. AI acts as the decentralized command layer.
+                            </td>
+                        </tr>
+
+                        <!-- Row 2: Compressed Sensor-to-Shooter Battle Management -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                    Compressed Sensor-to-Shooter Battle Management
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 text-blue-300 font-medium bg-blue-950/10">
+                                Automated Data Fusion & Predictive Target Package Generation
+                            </td>
+                            <td class="py-3 px-4 text-slate-200 bg-slate-900/20">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Sensor Fusion
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/50 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Mechanism</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[520px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/50 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>Operational Mechanism: Target Cycle Compression</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Machine-learning systems (such as Palantir AIP or Anduril Lattice) ingest multi-domain data streams in real time to filter noise, spot camouflaged troop movements, and generate verified targeting coordinates in milliseconds rather than hours. By compressing the sensor-to-shooter loop to seconds, AI deprives an adversary of the temporal window needed to launch a successful surprise attack.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Raw intelligence data—from satellite synthetic aperture radar (SAR) to open-source signals and acoustic sensors—is too vast for human analysts to process during a fast-moving crisis.
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: Energy & Economic Infrastructure Cost Imposition -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                    Energy & Economic Infrastructure Cost Imposition
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 text-blue-300 font-medium bg-blue-950/10">
+                                Deep-Strike Mission Planning & Vulnerability Mapping
+                            </td>
+                            <td class="py-3 px-4 text-slate-200 bg-slate-900/20">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Cost Imposition
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/50 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Mechanism</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[520px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/50 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>Operational Mechanism: Vulnerability Mapping & Mission Planning</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Generative predictive models run automated mission-planning simulations against adversary air-defense radars. The AI calculates optimal terrain-masking flight paths for long-range autonomous strike weapons while identifying precise failure nodes within an adversary's industrial grid. This guarantees that defensive retaliatory strikes inflict severe, non-linear economic damage.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Striking critical national infrastructure requires defeating dense air-defense networks and identifying high-value targets (e.g., catalytic crackers in oil refineries or specific substation transformers) that inflict maximum financial disruption.
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: Directed-Energy & HPM Defense Shields -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                    Directed-Energy & HPM Defense Shields
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 text-blue-300 font-medium bg-blue-950/10">
+                                Microsecond Target Tracking & Beam-Slew Allocation
+                            </td>
+                            <td class="py-3 px-4 text-slate-200 bg-slate-900/20">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Active Defense
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/50 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Mechanism</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[520px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/50 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>Operational Mechanism: Infinite Magazine & Beam Tracking</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Computer vision algorithms track incoming saturation swarms at microsecond intervals. The AI calculates target prioritization—evaluating which incoming drone poses the highest immediate threat—and slews the laser beam or microwave emitter from target to target faster than any human operator could acquire sight lines. This enables an "infinite magazine" defense to maintain a high kill rate against incoming saturation strikes.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Directed-energy weapons like High-Energy Lasers (HEL) and High-Power Microwaves (HPM) require precise beam-dwell times on fast-moving, maneuvering targets to achieve structural thermal kill or electronic disruption.
+                            </td>
+                        </tr>
+
+                        <!-- Row 5: Fiber-Optic & EW-Resistant Uncrewed Systems -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                    Fiber-Optic & EW-Resistant Uncrewed Systems
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 text-blue-300 font-medium bg-blue-950/10">
+                                Visual Inertial Odometry (VIO) & Terminal Optical Guidance
+                            </td>
+                            <td class="py-3 px-4 text-slate-200 bg-slate-900/20">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Spectrum Denial Resilience
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/50 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Mechanism</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[520px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/50 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>Operational Mechanism: Autonomous Spatial VIO & Vision Guidance</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                Edge AI vision models run Visual Inertial Odometry (VIO) by matching real-time camera feeds against onboard 3D terrain maps, allowing uncrewed systems to navigate without GPS. During the terminal phase of flight, onboard computer vision recognizes target shapes (e.g., specific armored vehicles or missile launchers) without human tele-operation or external radio frequencies, rendering electronic spectrum jamming ineffective.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Electronic warfare (EW) can sever radio command links and block GPS signals. AI replaces external navigation signals with onboard, autonomous spatial awareness.
+                            </td>
+                        </tr>
+
+                        <!-- Row 6: Cross-Domain Extended Deterrence & Networked Coalitions -->
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 font-semibold text-white">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                                    Cross-Domain Extended Deterrence & Networked Coalitions
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 text-blue-300 font-medium bg-blue-950/10">
+                                Interoperable Data Translation & Agentic Cyber Defense
+                            </td>
+                            <td class="py-3 px-4 text-slate-200 bg-slate-900/20">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-bold rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                                        <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Interoperability
+                                    </span>
+
+                                    <div class="relative group inline-block">
+                                        <button class="inline-flex items-center gap-1 text-[10px] text-emerald-400 hover:text-emerald-300 bg-emerald-950/90 hover:bg-emerald-900 px-2.5 py-0.5 rounded border border-emerald-500/50 cursor-help focus:outline-none transition-colors">
+                                            <span>Detailed Mechanism</span>
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                        </button>
+                                        
+                                        <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 absolute right-0 bottom-full mb-2 w-[520px] max-w-[90vw] p-3.5 bg-slate-900 border border-emerald-500/50 rounded-xl shadow-2xl z-50 text-slate-100 text-xs">
+                                            <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-800 pb-1">
+                                                <span>Operational Mechanism: Protocol Translation & Cyber Agents</span>
+                                            </div>
+                                            <p class="leading-relaxed text-slate-200">
+                                                AI serves as a cross-domain data translator, converting disparate radar formats, intelligence feeds, and cyber telemetry into a unified operational picture across allied forces. Simultaneously, autonomous cyber agents monitor military networks to detect and isolate adversary cyber intrusion attempts before they can disrupt joint command operations.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                Coalition deterrence (e.g., JADC2, AUKUS) relies on seamlessly combining military data from different allied nations using different legacy hardware and secure communications formats.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center sm:text-left text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2 px-1 pt-2">
+            <span>Executive Strategic Assessment &bull; AI Deterrence Frameworks</span>
+            <span>Hover over "Detailed Mechanism" buttons to view specific technical enabling algorithms</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>
