@@ -28,7 +28,7 @@
             background: rgba(30, 41, 59, 0.92);
             backdrop-filter: blur(12px);
         }
-        /* Custom Tooltip Visibility Logic */
+        /* Hover tooltip visibility transitions */
         .group:hover .tooltip-box,
         .group:focus-within .tooltip-box {
             visibility: visible !important;
@@ -41,6 +41,7 @@
 
     <div class="max-w-[1600px] mx-auto space-y-6 pt-12">
         
+        <!-- Header (No Subtitle) -->
         <header class="border-b border-slate-700/80 pb-4">
             <div class="flex items-center justify-between gap-2 mb-2">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/90 border border-emerald-500/40 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
@@ -49,7 +50,7 @@
                     </svg>
                     Executive Defense Matrix
                 </div>
-                <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Classification: Executive Briefing</span>
+                <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Executive Briefing Report</span>
             </div>
             <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
                 AI Frameworks in Modern War
@@ -67,6 +68,7 @@
                     </thead>
                     <tbody class="divide-y divide-slate-700/80 text-xs sm:text-sm leading-relaxed">
                         
+                        <!-- Row 1: Cheap Physical Hardware (EXTRA WIDE 700px TOOLTIP ABOVE HEADER) -->
                         <tr class="hover:bg-slate-800/60 transition-colors relative">
                             <td class="py-4 px-5 font-semibold text-white">
                                 <div class="flex items-start gap-2.5">
@@ -91,13 +93,13 @@
                                         <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 pointer-events-none group-hover:pointer-events-auto absolute right-0 bottom-full mb-3 w-[700px] max-w-[92vw] p-4 bg-slate-900 border-2 border-emerald-500/80 rounded-xl shadow-2xl z-50 text-slate-100 text-xs sm:text-sm">
                                             <div class="font-bold text-emerald-400 mb-2 flex items-center justify-between border-b border-slate-700 pb-2">
                                                 <span class="flex items-center gap-2 text-sm sm:text-base">
-                                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                                                    Operational Mechanism: Attritable Mass Swarming
+                                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                                    Operational Mechanism: Attritable Swarm Intelligence
                                                 </span>
                                                 <span class="text-[10px] text-emerald-400 font-mono uppercase bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/40">Technical Breakdown</span>
                                             </div>
                                             <p class="leading-relaxed text-slate-200">
-                                                AI allows 100’s to1000’s of low-cost platforms to communicate via self-healing Mobile Ad-hoc Networks. AI instantly reassigns tasks across the remaining swarm without human intervention. Helps attacks and defense. Can lose 80% or weapons and still succeed (Attritable weapons)
+                                                AI allows 100’s to1000’s of low-cost platforms to communicate via self-healing Mobile Ad-hoc Networks. AI instantly reassigns tasks across the remaining swarm without human intervention. Helps attacks and defense. Can lose 80% and still succeed (Attritable weapons). <span class="text-amber-300 font-medium">Note: Ukraine conducted first swarm drone attack on Russian Bombers. And mfg of weapons targeted at 4.5mm next year.</span>
                                             </p>
                                             <div class="absolute right-6 -bottom-2 w-3.5 h-3.5 bg-slate-900 border-r-2 border-b-2 border-emerald-500/80 transform rotate-45"></div>
                                         </div>
@@ -106,6 +108,7 @@
                             </td>
                         </tr>
 
+                        <!-- Row 2: Immense volumes of sensor data -->
                         <tr class="hover:bg-slate-800/60 transition-colors relative">
                             <td class="py-4 px-5 font-semibold text-white">
                                 <div class="flex items-start gap-2.5">
@@ -130,7 +133,7 @@
                                                 <span>Operational Mechanism: Rapid Sensor Fusion</span>
                                             </div>
                                             <p class="leading-relaxed text-slate-200">
-                                                AI systems ingest and filter noise, spot camouflaged troop movements, and generate verified targeting coordinates in milliseconds rather than hours. AI deprives an adversary of the time window needed to launch a successful surprise attack.
+                                                AI systems ingest and filter noise, spot camouflaged troop movements, and generate verified targeting coordinates in milliseconds rather than hours. AI deprives an adversary of the time window needed to launch a successful surprise attack. <span class="text-amber-300 font-medium">Note: Ukraine soldiers have seconds to arm a drone and set it off…and their jamming helped them escape by 10meters.</span>
                                             </p>
                                         </div>
                                     </div>
@@ -138,6 +141,7 @@
                             </td>
                         </tr>
 
+                        <!-- Row 3: Highly Disruptive Infrastructure Targeting -->
                         <tr class="hover:bg-slate-800/60 transition-colors relative">
                             <td class="py-4 px-5 font-semibold text-white">
                                 <div class="flex items-start gap-2.5">
@@ -159,10 +163,10 @@
                                         
                                         <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 pointer-events-none group-hover:pointer-events-auto absolute right-0 bottom-full mb-2 w-[540px] max-w-[90vw] p-4 bg-slate-900 border border-emerald-500/60 rounded-xl shadow-2xl z-50 text-slate-100 text-xs sm:text-sm">
                                             <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-700 pb-1">
-                                                <span>Operational Mechanism: Vulnerability Mapping & Flight Routing</span>
+                                                <span>Operational Mechanism: Vulnerability Mapping & Deep Strike Routing</span>
                                             </div>
                                             <p class="leading-relaxed text-slate-200">
-                                                AI calculates optimal terrain-masking flight paths for long-range autonomous strike weapons and identifies points of vulnerability in target’s industrial grid. This guarantees that strikes inflict severe, highly disruptive economic damage.
+                                                AI calculates optimal terrain-masking flight paths for long-range autonomous strike weapons and identifies points of failure in target’s industrial grid. This guarantees that strikes inflict severe, highly disruptive economic damage. <span class="text-amber-300 font-medium">Note Ukraine has targeted many Russian ships, planes, oil refineries, key grid substations, bridges and oil product terminals with deep strike drones and autonomous boats.</span>
                                             </p>
                                         </div>
                                     </div>
@@ -170,6 +174,7 @@
                             </td>
                         </tr>
 
+                        <!-- Row 4: Directed Energy Defense Shields -->
                         <tr class="hover:bg-slate-800/60 transition-colors relative">
                             <td class="py-4 px-5 font-semibold text-white">
                                 <div class="flex items-start gap-2.5">
@@ -180,7 +185,7 @@
                             <td class="py-4 px-5 text-slate-200 bg-slate-800/30">
                                 <div class="flex items-center justify-between gap-3">
                                     <span class="text-emerald-300 font-medium">
-                                        AI is Essential to High-Energy Lasers and High-Power Microwave defensive systems which target and kill or disable attack drones and autonomous weapons via electronic disruption
+                                        AI Essential to High-Energy Lasers and High Power Microwave defensive systems which target and kill or disable attack drones and autonomous weapons via electronic disruption
                                     </span>
 
                                     <div class="relative group inline-block shrink-0">
@@ -202,6 +207,7 @@
                             </td>
                         </tr>
 
+                        <!-- Row 5: Electronic Jamming Resistant Weapons -->
                         <tr class="hover:bg-slate-800/60 transition-colors relative">
                             <td class="py-4 px-5 font-semibold text-white">
                                 <div class="flex items-start gap-2.5">
@@ -223,10 +229,10 @@
                                         
                                         <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 pointer-events-none group-hover:pointer-events-auto absolute right-0 bottom-full mb-2 w-[540px] max-w-[90vw] p-4 bg-slate-900 border border-emerald-500/60 rounded-xl shadow-2xl z-50 text-slate-100 text-xs sm:text-sm">
                                             <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-700 pb-1">
-                                                <span>Operational Mechanism: Onboard Computer Vision Navigation</span>
+                                                <span>Operational Mechanism: Autonomous Spatial Navigation</span>
                                             </div>
                                             <p class="leading-relaxed text-slate-200">
-                                                AI vision models allow uncrewed systems to navigate without GPS. During the terminal phase of flight, onboard computer vision recognizes target shapes without human tele-operation or external radio frequencies, making electronic jamming ineffective.
+                                                AI vision models allow uncrewed systems to navigate without GPS. During the terminal phase of flight, onboard computer vision recognizes target shapes without human tele-operation or external radio frequencies, making electronic jamming ineffective. <span class="text-amber-300 font-medium">Note Ukraine’s long range strikes made use of these capabilities.</span>
                                             </p>
                                         </div>
                                     </div>
@@ -234,6 +240,7 @@
                             </td>
                         </tr>
 
+                        <!-- Row 6: Coordination of Coalitions/Allies -->
                         <tr class="hover:bg-slate-800/60 transition-colors relative">
                             <td class="py-4 px-5 font-semibold text-white">
                                 <div class="flex items-start gap-2.5">
@@ -255,10 +262,10 @@
                                         
                                         <div class="tooltip-box invisible opacity-0 transition-all duration-200 ease-out transform translate-y-1 scale-95 pointer-events-none group-hover:pointer-events-auto absolute right-0 bottom-full mb-2 w-[540px] max-w-[90vw] p-4 bg-slate-900 border border-emerald-500/60 rounded-xl shadow-2xl z-50 text-slate-100 text-xs sm:text-sm">
                                             <div class="font-bold text-emerald-400 mb-1 flex items-center justify-between border-b border-slate-700 pb-1">
-                                                <span>Operational Mechanism: Data Translation & Cyber Defense</span>
+                                                <span>Operational Mechanism: Protocol Translation & Cyber Defense</span>
                                             </div>
                                             <p class="leading-relaxed text-slate-200">
-                                                AI serves as data translator, creating a unified operational picture across allied forces. Autonomous AI agents also detect, and isolate cyber intrusion attempts to prevent disruption of joint command operations.
+                                                AI serves as data translator, creating a unified operational picture across allied forces. Autonomous AI agents also detect and isolate cyber intrusion attempts to prevent disruption of joint command operations.
                                             </p>
                                         </div>
                                     </div>
@@ -271,9 +278,10 @@
             </div>
         </main>
 
+        <!-- Footer -->
         <footer class="text-center sm:text-left text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-2 px-1 pt-2">
             <span>Executive Briefing Document &bull; AI Warfare Frameworks</span>
-            <span>Hover or tap "Detailed Mechanism" buttons to view technical operational details</span>
+            <span>Hover or tap "Detailed Mechanism" badges to view technical operational details</span>
         </footer>
 
     </div>
