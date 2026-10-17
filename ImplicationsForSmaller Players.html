@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implications of AI Warfare</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        linen: {
+                            50: '#FAF8F5',
+                            100: '#F4EFE6',
+                            200: '#E8DFD1',
+                            300: '#D6C7B2',
+                            800: '#3D3429',
+                            900: '#28221A',
+                        },
+                        forest: {
+                            700: '#1B4D3E',
+                            800: '#143D31',
+                            900: '#0D2B22',
+                        },
+                        amber: {
+                            700: '#B45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            min-height: 100vh;
+            width: 100vw;
+            background-color: #F4EFE6;
+            color: #28221A;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Framed Document Box with 1/4-inch Solid Dark Border */
+        .framed-card {
+            position: relative;
+            background: #FAF8F5; /* 100% Opaque Linen - No grid visible */
+            border: 0.25in solid #28221A; /* 1/4 inch dark border */
+            box-shadow: 0 10px 25px -5px rgba(40, 34, 26, 0.15);
+        }
+
+        .framed-card::before, .framed-card::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-color: #1B4D3E;
+            border-style: solid;
+            pointer-events: none;
+        }
+
+        .framed-card::before {
+            top: 4px; left: 4px;
+            border-width: 3px 0 0 3px;
+        }
+
+        .framed-card::after {
+            bottom: 4px; right: 4px;
+            border-width: 0 3px 3px 0;
+        }
+
+        /* Drone Swarm Vector SVG Watermark (~0.05 Opacity on light background) */
+        .drone-watermark {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            .framed-card {
+                background: #ffffff !important;
+                box-shadow: none !important;
+                border: 0.25in solid #000000 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-linen-100 text-linen-900 antialiased min-h-screen w-screen flex flex-col justify-center items-center px-4 py-8 sm:px-8 sm:py-12 relative selection:bg-forest-700 selection:text-white">
+
+    <main class="relative z-10 w-full max-w-3xl flex flex-col items-center justify-center">
+        
+        <!-- Main Framed Container with 1/4 Inch Border -->
+        <div class="framed-card rounded-2xl p-8 sm:p-12 relative overflow-hidden w-full text-center">
+            
+            <!-- Drone Swarm Vector SVG Watermark Overlay -->
+            <div class="drone-watermark flex items-center justify-center">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="droneSwarmPattern" width="160" height="160" patternUnits="userSpaceOnUse">
+                            <!-- Drone Quadcopter 1 -->
+                            <g transform="translate(25,25) scale(0.75)" fill="#1B4D3E">
+                                <circle cx="20" cy="20" r="4"/>
+                                <path d="M5 20 L35 20 M20 5 L20 35" stroke="#1B4D3E" stroke-width="2"/>
+                                <circle cx="5" cy="5" r="3.5" stroke="#1B4D3E" stroke-width="1.5" fill="none"/>
+                                <circle cx="35" cy="5" r="3.5" stroke="#1B4D3E" stroke-width="1.5" fill="none"/>
+                                <circle cx="5" cy="35" r="3.5" stroke="#1B4D3E" stroke-width="1.5" fill="none"/>
+                                <circle cx="35" cy="35" r="3.5" stroke="#1B4D3E" stroke-width="1.5" fill="none"/>
+                            </g>
+                            <!-- Drone Quadcopter 2 -->
+                            <g transform="translate(100,90) scale(0.6)" fill="#B45309">
+                                <circle cx="20" cy="20" r="4"/>
+                                <path d="M5 20 L35 20 M20 5 L20 35" stroke="#B45309" stroke-width="2"/>
+                                <circle cx="5" cy="5" r="3.5" stroke="#B45309" stroke-width="1.5" fill="none"/>
+                                <circle cx="35" cy="5" r="3.5" stroke="#B45309" stroke-width="1.5" fill="none"/>
+                                <circle cx="5" cy="35" r="3.5" stroke="#B45309" stroke-width="1.5" fill="none"/>
+                                <circle cx="35" cy="35" r="3.5" stroke="#B45309" stroke-width="1.5" fill="none"/>
+                            </g>
+                            <!-- Vector Link Lines -->
+                            <path d="M40 40 L110 100 M110 100 L140 30" stroke="rgba(27,77,62,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#droneSwarmPattern)"/>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-forest-900 mb-8 relative z-10">
+                Implications of AI Warfare
+            </h1>
+
+            <!-- Content Area -->
+            <div class="relative z-10 space-y-6 text-left">
+                <p class="text-lg sm:text-xl lg:text-2xl font-semibold text-forest-800 leading-relaxed">
+                    <em>AI levels the playing field of warfare for smaller countries, rogue states, and hostile actors of all stripes</em>
+                </p>
+                <p class="text-base sm:text-lg lg:text-xl text-linen-900 leading-relaxed font-sans font-medium">
+                    It serves as a major capability multiplier making them more lethal and disruptive by drastically lowering technical barriers to advanced weaponry and accelerating the speed of attack cycles.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
