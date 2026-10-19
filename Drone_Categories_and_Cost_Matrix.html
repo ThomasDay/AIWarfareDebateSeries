@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Categories and Cost Matrix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'sans-serif'],
+                        mono: ['Consolas', '"Courier New"', 'monospace'],
+                    },
+                    colors: {
+                        linen: {
+                            50: '#fdfbf7',   /* Linen White Base */
+                            100: '#f6f1e8',  /* Warm Stone Background */
+                            200: '#ebe1d3',  /* Border Accent Light */
+                            300: '#dcd0bf',  /* Border Accent Main */
+                            800: '#4a3f35',
+                            900: '#2d251e',
+                            950: '#1c1917',  /* Dark Slate Primary Text */
+                        },
+                        earth: {
+                            teal: '#1b6a73',
+                            sage: '#2e6f40',
+                            terracotta: '#c25e00',
+                            clay: '#8c431d',
+                            slate: '#2c3539',
+                            indigo: '#3b4878'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Strict single-screen layout settings for 1080p displays */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #fdfbf7;
+        }
+
+        /* Tooltip Mechanics */
+        .tooltip-trigger {
+            position: relative;
+        }
+        
+        .tooltip-bubble {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+            position: absolute;
+            z-index: 100;
+            width: 440px;
+            max-width: 85vw;
+            bottom: 115%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .tooltip-trigger:hover .tooltip-bubble {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip-trigger.flip-down .tooltip-bubble {
+            bottom: auto;
+            top: 115%;
+        }
+
+        /* Column 2 Hover Schematic Card Popups */
+        .schematic-trigger {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .schematic-card {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out;
+            position: absolute;
+            z-index: 90;
+            width: 290px;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .schematic-trigger:hover .schematic-card {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .schematic-trigger.flip-down .schematic-card {
+            bottom: auto;
+            top: 110%;
+        }
+
+        /* Subtle scrollbars if resized on smaller displays */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6f1e8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dcd0bf;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="text-linen-950 h-screen p-3 sm:p-4 font-sans antialiased selection:bg-amber-200 selection:text-stone-900 flex flex-col justify-between">
+
+    <div class="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-between">
+        
+        <!-- Header Bar -->
+        <header class="flex items-center justify-between pb-2 border-b border-linen-300">
+            <div>
+                <h1 class="text-lg sm:text-xl font-bold tracking-tight text-stone-900 flex items-center gap-2">
+                    <span class="text-earth-terracotta text-lg">⚡</span> Drone Categories &amp; Cost Matrix
+                </h1>
+                <p class="text-xs text-stone-600 font-medium">
+                    Windows 11 Operational Intelligence Package • Mechanical Structure, Unit Economics, &amp; Embedded AI Stacks
+                </p>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="px-3 py-1 bg-white hover:bg-linen-100 text-stone-800 text-xs font-semibold rounded border border-linen-300 transition shadow-sm flex items-center gap-1">
+                    <span>🖨️</span> Print PDF
+                </button>
+                <button onclick="exportHTML()" class="px-3 py-1 bg-earth-terracotta hover:bg-amber-700 text-white text-xs font-bold rounded shadow transition flex items-center gap-1">
+                    <span>📥</span> Export HTML File
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Table Container: Fitted for 1080p Single Viewport (No Vertical Scrolling) -->
+        <main class="my-auto rounded-lg border border-linen-300 bg-white shadow-md overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-linen-100 text-stone-700 text-[11px] font-bold uppercase tracking-wider border-b border-linen-300">
+                        <th class="py-1.5 px-3 w-[27%]">Mechanical Category &amp; Architecture</th>
+                        <th class="py-1.5 px-3 w-[23%]">Unit Cost Range &amp; Example</th>
+                        <th class="py-1.5 px-3 w-[23%]">AI Hardware Stack &amp; Capability</th>
+                        <th class="py-1.5 px-3 w-[27%]">Tactical Outcome &amp; Operational Role</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-linen-200 text-xs">
+                    
+                    <!-- Row 1: Short-Range Tactical Multirotor -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">1. Short-Range Tactical Multirotor</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">Micro Carbon Airframe + Direct-Drive Brushless Motors</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-emerald-50 text-earth-sage border border-emerald-200 text-[9px] font-semibold rounded">
+                                Reusable / Attritable Strike
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$300 – $2,500</div>
+                            <div class="schematic-trigger flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-teal" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4">
+                                        <circle cx="50" cy="50" r="12" fill="#1b6a73" />
+                                        <line x1="20" y1="20" x2="80" y2="80" />
+                                        <line x1="80" y1="20" x2="20" y2="80" />
+                                        <circle cx="20" cy="20" r="14" stroke="#1b6a73" stroke-width="3" />
+                                        <circle cx="80" cy="20" r="14" stroke="#1b6a73" stroke-width="3" />
+                                        <circle cx="20" cy="80" r="14" stroke="#1b6a73" stroke-width="3" />
+                                        <circle cx="80" cy="80" r="14" stroke="#1b6a73" stroke-width="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">DJI Avata 2 / Wild Hornets</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">FPV Interceptor Quadcopter</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-teal uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-teal" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <circle cx="50" cy="50" r="14" fill="#1b6a73" />
+                                            <line x1="15" y1="15" x2="85" y2="85" />
+                                            <line x1="85" y1="15" x2="15" y2="85" />
+                                            <circle cx="15" cy="15" r="16" stroke="#1b6a73" stroke-width="3" />
+                                            <circle cx="85" cy="15" r="16" stroke="#1b6a73" stroke-width="3" />
+                                            <circle cx="15" cy="85" r="16" stroke="#1b6a73" stroke-width="3" />
+                                            <circle cx="85" cy="85" r="16" stroke="#1b6a73" stroke-width="3" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 140 km/h</div>
+                                        <div><strong class="text-stone-900">Payload:</strong> 1.5 kg (PG-7VR Warhead)</div>
+                                        <div><strong class="text-stone-900">Operational Radius:</strong> 8 - 12 km</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    Raspberry Pi 5 / SiMa.ai
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Edge Vision AI / Neural Terminal Homing</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Optical flow terminal lock, automated target recognition (ATR) on infantry and light vehicles during RF electronic warfare jamming.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">High-volume attrition strikes; forces adversary to expend expensive air defense interceptors against disposable kinetic platforms. Denies troop dugouts and breaches top armor.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-teal shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4">
+                                                <circle cx="50" cy="50" r="12" fill="#1b6a73" />
+                                                <line x1="20" y1="20" x2="80" y2="80" />
+                                                <line x1="80" y1="20" x2="20" y2="80" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">Quadcopter Tactical Frame</div>
+                                                <div>Low-latency terminal homing running on edge hardware.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            High-volume attrition strikes; forces adversary to expend expensive air defense interceptors against disposable kinetic platforms. Denies troop dugouts and breaches top armor.
+                        </td>
+                    </tr>
+
+                    <!-- Row 2: Heavy-Lift Industrial Multirotor -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">2. Heavy-Lift Industrial Multirotor</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">Multi-Arm Hexacopter Frame + Multi-Spectral Sensor Rigs</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-emerald-50 text-earth-sage border border-emerald-200 text-[9px] font-semibold rounded">
+                                Fully Reusable Heavy Bomber
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$10,000 – $40,000</div>
+                            <div class="schematic-trigger flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-terracotta" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" stroke="#c25e00" fill="none" />
+                                        <circle cx="50" cy="50" r="10" fill="#c25e00" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">DJI Matrice 350 RTK / Hexa</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">Industrial Night Bomber</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-terracotta uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-terracotta" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polygon points="50,10 88,32 88,78 50,100 12,78 12,32" stroke="#c25e00" fill="none" />
+                                            <circle cx="50" cy="50" r="12" fill="#c25e00" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 85 km/h</div>
+                                        <div><strong class="text-stone-900">Payload:</strong> 15 - 20 kg (TM-62 Mines)</div>
+                                        <div><strong class="text-stone-900">Operational Radius:</strong> 15 km</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    NVIDIA Jetson Orin Nano
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Swarm Mesh Networking / Thermal Fusion</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Multi-spectral night thermal imaging, automated heavy explosive drop calculation, and mesh relay control for subordinate FPV swarms.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Destroys fortified emplacements and supply trucks during night ops; serves as airborne signal repeater for low-altitude FPV strike drones.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-terracotta shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                                <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" stroke="#c25e00" fill="none" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">Hexacopter Heavy Frame</div>
+                                                <div>Supports thermal gimbals and multi-payload release mechanisms.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            Destroys fortified emplacements and supply trucks during night ops; serves as airborne signal repeater for low-altitude FPV strike drones.
+                        </td>
+                    </tr>
+
+                    <!-- Row 3: One-Way Attack / Loitering Munition -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">3. One-Way Attack / Loitering Munition</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">Single-Use Delta Airframe + Integrated Warhead Payload</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-rose-50 text-rose-700 border border-rose-200 text-[9px] font-semibold rounded">
+                                Non-Reusable (Expendable Strike)
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$20,000 – $900,000</div>
+                            <div class="schematic-trigger flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-clay" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polygon points="50,15 90,85 50,70 10,85" fill="#8c431d" stroke="#8c431d" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">Shahed-136 / Switchblade 600</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">Delta-Wing OWA Munition</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-clay uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-clay" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polygon points="50,10 95,90 50,72 5,90" fill="#8c431d" stroke="#8c431d" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 185 km/h</div>
+                                        <div><strong class="text-stone-900">Warhead:</strong> 40 - 50 kg HE-Fragmentation</div>
+                                        <div><strong class="text-stone-900">Operational Radius:</strong> 1,000 - 2,500 km</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    Xilinx Zynq FPGA / Jetson AGX
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Visual Inertial Odometry (VIO) / ATR</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">CRPA anti-jamming GNSS integration, terrain contour matching (TERCOM), and visual scene matching for final dive terminal guidance.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Strategic deep bombardment against energy infrastructure and command centers; forces asymmetric expenditure of high-cost air defense missiles.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-clay shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                                <polygon points="50,15 90,85 50,70 10,85" fill="#8c431d" stroke="#8c431d" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">Delta-Wing Pusher Airframe</div>
+                                                <div>Optimized for low radar cross-section and long-range flight.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            Strategic deep bombardment against energy infrastructure and command centers; forces asymmetric expenditure of high-cost air defense missiles.
+                        </td>
+                    </tr>
+
+                    <!-- Row 4: Single-Rotor Helicopter UAV -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">4. Single-Rotor Helicopter UAV</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">Swashplate Pitch Mechanics + Single Main Lifting Rotor</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-emerald-50 text-earth-sage border border-emerald-200 text-[9px] font-semibold rounded">
+                                Fully Reusable Heavy Lift
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$100,000 – $350,000</div>
+                            <div class="schematic-trigger flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-indigo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                        <line x1="10" y1="50" x2="90" y2="50" stroke="#3b4878" stroke-width="4" />
+                                        <ellipse cx="50" cy="50" rx="20" ry="10" fill="#3b4878" stroke="#3b4878" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">Yamaha R-MAX / Skeldar V-200</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">Autonomous Rotary Helicopter</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-indigo uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-indigo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="5" y1="50" x2="95" y2="50" stroke="#3b4878" stroke-width="5" />
+                                            <ellipse cx="50" cy="50" rx="24" ry="12" fill="#3b4878" stroke="#3b4878" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 150 km/h</div>
+                                        <div><strong class="text-stone-900">Payload:</strong> 28 - 50 kg (LiDAR / Cargo)</div>
+                                        <div><strong class="text-stone-900">Operational Radius:</strong> 100 km</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    Intel Atom / Custom FPGA
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Adaptive Control / Obstacle Avoidance</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Precision dynamic autorotation recovery, autonomous maritime ship-deck landing, and synthetic aperture radar (SAR) terrain processing.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Heavy cargo resupply and casualty evacuation in austere terrain without runway requirements; maritime dipping sonar anti-submarine operations.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-indigo shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                                <line x1="10" y1="50" x2="90" y2="50" stroke="#3b4878" stroke-width="4" />
+                                                <ellipse cx="50" cy="50" rx="20" ry="10" fill="#3b4878" stroke="#3b4878" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">Main Rotor Helicopter Layout</div>
+                                                <div>Combines vertical takeoff flexibility with long hover endurance.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            Heavy cargo resupply and casualty evacuation in austere terrain without runway requirements; maritime dipping sonar anti-submarine operations.
+                        </td>
+                    </tr>
+
+                    <!-- Row 5: Propeller Fixed-Wing Recon UAV -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">5. Propeller Fixed-Wing Recon UAV</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">High Lift-to-Drag Airfoil Wing + Internal Combustion Engine</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-emerald-50 text-earth-sage border border-emerald-200 text-[9px] font-semibold rounded">
+                                Fully Reusable Tactical ISR
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$100,000 – $5,000,000+</div>
+                            <div class="schematic-trigger flip-down flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-slate" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                        <line x1="10" y1="50" x2="90" y2="50" stroke="#2c3539" stroke-width="6" />
+                                        <polygon points="50,15 58,85 42,85" fill="#2c3539" stroke="#2c3539" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">Bayraktar TB2 / MQ-1C Gray Eagle</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">Tactical Recon Platform</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-slate uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-slate" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="5" y1="50" x2="95" y2="50" stroke="#2c3539" stroke-width="7" />
+                                            <polygon points="50,10 59,90 41,90" fill="#2c3539" stroke="#2c3539" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 220 km/h</div>
+                                        <div><strong class="text-stone-900">Payload:</strong> 150 kg (MAM-L Smart Munitions)</div>
+                                        <div><strong class="text-stone-900">Endurance:</strong> 27 Hours</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger flip-down inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    NVIDIA Jetson Orin AGX / Custom ASIC
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Onboard Computer Vision / Classification</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Continuous wide-area motion imagery (WAMI), automated laser target designation, and long-range SIGINT emitter classification.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Persistent theater-level surveillance and artillery spotter; pinpoint laser designation for precision-guided munitions against armored columns.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-slate shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                                <line x1="10" y1="50" x2="90" y2="50" stroke="#2c3539" stroke-width="6" />
+                                                <polygon points="50,15 58,85 42,85" fill="#2c3539" stroke="#2c3539" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">Monoplane High-Aspect Wing</div>
+                                                <div>Designed for continuous high-altitude loitering endurance.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            Persistent theater-level surveillance and artillery spotter; pinpoint laser designation for precision-guided munitions against armored columns.
+                        </td>
+                    </tr>
+
+                    <!-- Row 6: Hybrid Fixed-Wing VTOL -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">6. Hybrid Fixed-Wing VTOL</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">Dedicated VTOL Vertical Rotors + Fixed Forward Cruise Wings</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-emerald-50 text-earth-sage border border-emerald-200 text-[9px] font-semibold rounded">
+                                Fully Reusable Expeditionary
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$40,000 – $200,000</div>
+                            <div class="schematic-trigger flip-down flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-teal" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                        <line x1="15" y1="50" x2="85" y2="50" stroke="#1b6a73" stroke-width="5" />
+                                        <line x1="25" y1="20" x2="25" y2="80" stroke="#1b6a73" stroke-width="3" />
+                                        <line x1="75" y1="20" x2="75" y2="80" stroke="#1b6a73" stroke-width="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">Quantum Vector / Wingcopter</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">eVTOL Lift-and-Cruise Platform</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-teal uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-teal" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="10" y1="50" x2="90" y2="50" stroke="#1b6a73" stroke-width="6" />
+                                            <line x1="25" y1="15" x2="25" y2="85" stroke="#1b6a73" stroke-width="4" />
+                                            <line x1="75" y1="15" x2="75" y2="85" stroke="#1b6a73" stroke-width="4" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 110 km/h</div>
+                                        <div><strong class="text-stone-900">Payload:</strong> 3 - 5 kg (EO/IR Gimbal)</div>
+                                        <div><strong class="text-stone-900">Operational Radius:</strong> 35 km</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger flip-down inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    Qualcomm Flight RB5 / Jetson
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Transition Flight AI / Emitter Mapping Logic</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Transition-flight stabilization in crosswinds, autonomous spatial mapping, and direct handoff logic for strike units.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Rapid tactical reconnaissance for frontline infantry units; operational versatility combining vertical hover agility with fixed-wing efficiency.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-teal shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                                <line x1="15" y1="50" x2="85" y2="50" stroke="#1b6a73" stroke-width="5" />
+                                                <line x1="25" y1="20" x2="25" y2="80" stroke="#1b6a73" stroke-width="3" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">eVTOL Lift-and-Cruise Architecture</div>
+                                                <div>Combines vertical takeoff capability with forward cruise.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            Rapid tactical reconnaissance for frontline infantry units; operational versatility combining vertical hover agility with fixed-wing efficiency.
+                        </td>
+                    </tr>
+
+                    <!-- Row 7: Jet-Propelled UCAV -->
+                    <tr class="hover:bg-linen-50/80 transition">
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-bold text-stone-900 text-xs">7. Jet-Propelled UCAV</div>
+                            <div class="text-stone-500 text-[10px] leading-tight font-medium">Stealth Flying Wing Airframe + Turbofan Propulsion</div>
+                            <span class="inline-block mt-0.5 px-1.5 py-0.2 bg-emerald-50 text-earth-sage border border-emerald-200 text-[9px] font-semibold rounded">
+                                Fully Reusable Strategic Asset
+                            </span>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="font-mono font-bold text-earth-sage text-xs mb-0.5">$1,500,000 – $30,000,000+</div>
+                            <div class="schematic-trigger flip-down flex items-center gap-2">
+                                <div class="w-7 h-7 rounded bg-linen-100 border border-linen-300 flex items-center justify-center p-0.5 shrink-0">
+                                    <svg class="w-5 h-5 text-earth-indigo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                        <polygon points="50,20 90,80 50,65 10,80" fill="#3b4878" stroke="#3b4878" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] font-bold text-stone-800 leading-tight">Sukhoi S-70 / Kratos Valkyrie</div>
+                                    <div class="text-[9px] text-stone-500 font-medium">Stealth Jet UCAV / Loyal Wingman</div>
+                                </div>
+
+                                <!-- Hover Card Popup -->
+                                <div class="schematic-card bg-white border border-linen-300 rounded-lg p-2.5 shadow-xl text-left">
+                                    <div class="text-[10px] font-bold text-earth-indigo uppercase tracking-wider mb-1 pb-0.5 border-b border-linen-200">Airframe Schematic Spec</div>
+                                    <div class="w-full h-18 bg-linen-50 rounded border border-linen-200 flex items-center justify-center mb-1">
+                                        <svg class="w-12 h-12 text-earth-indigo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polygon points="50,15 95,85 50,70 5,85" fill="#3b4878" stroke="#3b4878" />
+                                        </svg>
+                                    </div>
+                                    <div class="text-[10px] text-stone-700 space-y-0.5">
+                                        <div><strong class="text-stone-900">Max Speed:</strong> 1,000 km/h (Mach 0.9)</div>
+                                        <div><strong class="text-stone-900">Payload:</strong> 2,000 kg (Internal Bay)</div>
+                                        <div><strong class="text-stone-900">Operational Radius:</strong> 6,000 km</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle">
+                            <div class="tooltip-trigger flip-down inline-block">
+                                <span class="cursor-help px-2 py-0.5 bg-cyan-50 border border-cyan-300 text-earth-teal font-mono font-semibold text-[11px] rounded hover:bg-cyan-100 transition">
+                                    Military Custom ASIC / MUM-T
+                                </span>
+                                <div class="text-[10px] text-stone-500 mt-0.5 font-medium">Autonomous Combat Autopilot (MUM-T)</div>
+
+                                <!-- 3-Section Tooltip -->
+                                <div class="tooltip-bubble bg-white border border-linen-300 rounded-lg p-3 shadow-2xl text-left text-xs space-y-2">
+                                    <div>
+                                        <div class="text-earth-teal font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 1: AI Operational Capability</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Collaborative combat aircraft (CCA) loyal wingman teaming, autonomous suppression of air defenses (SEAD), and electronic attack jamming.</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-sage font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 2: Tactical Impact</div>
+                                        <p class="text-stone-600 text-[11px] leading-snug">Penetrates heavily defended A2/AD air defense zones ahead of manned stealth fighters; executes suppression of enemy air defenses (SEAD).</p>
+                                    </div>
+                                    <div class="border-t border-linen-200 pt-1.5">
+                                        <div class="text-earth-terracotta font-bold uppercase text-[10px] tracking-wider mb-0.5">Section 3: Platform Schematic</div>
+                                        <div class="flex items-center gap-2 bg-linen-50 p-1.5 rounded border border-linen-200">
+                                            <svg class="w-8 h-8 text-earth-indigo shrink-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                                                <polygon points="50,20 90,80 50,65 10,80" fill="#3b4878" stroke="#3b4878" />
+                                            </svg>
+                                            <div class="text-[10px] text-stone-700">
+                                                <div class="font-bold text-stone-900">Stealth Flying Wing</div>
+                                                <div>Minimal radar cross-section engineered for high subsonic penetration.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-1.5 px-3 align-middle text-stone-700 text-[11px] leading-snug">
+                            Penetrates heavily defended A2/AD air defense zones ahead of manned stealth fighters; executes suppression of enemy air defenses (SEAD).
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </main>
+
+        <!-- Footer Bar -->
+        <footer class="pt-2 border-t border-linen-300 flex items-center justify-between text-[10px] text-stone-500">
+            <div>Drone Categories &amp; Cost Matrix • Standalone Web Application Package</div>
+            <div class="font-mono">Linen White &amp; Earth Accent Theme • 100% Inline Vector Assets</div>
+        </footer>
+    </div>
+
+    <!-- Export HTML File Functionality Script -->
+    <script>
+        function exportHTML() {
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Drone_Categories_and_Cost_Matrix.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
